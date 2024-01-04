@@ -1,0 +1,26 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Monster Hunter World: Iceborne</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1>{{Data.name}}</h1>
+    <ion-item *ngFor="let item of Data.ranks">
+      <div>
+        <h2>Level: {{item.level}}</h2>
+        <p>Rarity: {{item.rarity}}</p>
+      <h2>Skills</h2>
+      <div *ngFor="let skill of item.skills">
+        <h3>{{skill.skillName}}</h3>
+        <p>{{skill.description}}</p>
+      </div>
+      <h2>Crafting</h2>
+      <div *ngFor="let mat of item.crafting.materials">
+        <p>{{mat.item.name}}: {{mat.quantity}}</p>
+      </div>
+      </div>
+    </ion-item>
+  </div>
+</ion-content>

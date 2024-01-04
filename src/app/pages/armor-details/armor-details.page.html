@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Monster Hunter World: Iceborne</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1>{{Data.name}}</h1>
+    <p>Rank: {{Data.rank}}</p>
+    <h2>Pieces</h2>
+    <div *ngFor="let pie of Data.pieces">
+      <ion-item>{{pie.name}}</ion-item>
+      <div *ngIf="pie.assets != null">
+      <img src={{pie.assets.imageMale}} width="100" height="100">
+      <img src={{pie.assets.imageFemale}} width="100" height="100">
+      </div>
+      <h3>Attributes</h3>
+      <p>Defense: {{pie.defense.base}}</p>
+        <p>Thunder defense: {{pie.resistances.thunder}}</p>
+        <p>Water defense: {{pie.resistances.water}}</p>
+        <p>Ice defense: {{pie.resistances.ice}}</p>
+        <p>Fire defense: {{pie.resistances.fire}}</p>
+        <p>Dragon defense: {{pie.resistances.dragon}}</p>
+      <h3>Skills</h3>
+      <div *ngFor="let skill of pie.skills">
+        <h3>{{skill.skillName}}</h3>
+        <p>{{skill.description}}</p>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Monster Hunter World: Iceborne</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1>{{Data.name}}</h1>
+    <p>Species: {{Data.species}}</p>
+    <h2>Description</h2>
+    <p>{{Data.description}}</p>
+    <h2>Ailments</h2>
+    <div *ngFor="let ail of Data.ailments">
+      <h3>{{ail.name}}</h3>
+      <p>{{ail.description}}</p>
+    </div>
+    <h2>Locations</h2>
+    <div *ngFor="let loc of Data.locations">
+      <h3>{{loc.name}}</h3>
+    </div>
+    <h2>Resistances</h2>
+    <div *ngFor="let loc of Data.resistances">
+      <h3>{{loc.element}}</h3>
+    </div>
+    <h2>Weaknesses</h2>
+    <div *ngFor="let loc of Data.weaknesses">
+      <h3>{{loc.element}}: {{loc.stars}}<ion-icon name="star"></ion-icon></h3>
+    </div>
+    <h2>Rewards</h2>
+    <div *ngFor="let loc of Data.rewards">
+      <p>{{loc.item.name}}</p>
+    </div>
+  </div>
+</ion-content>

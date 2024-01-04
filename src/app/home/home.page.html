@@ -1,20 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Monster Hunter World: Iceborne
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-toggle [(ngModel)]="darkMode" (ionChange)="toggleDarkMode()">Dark Theme</ion-toggle>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content [fullscreen]="true" [class.dark-theme]="darkMode">
+  <div *ngIf="!loading; else loaderTemplate">
+    <div id="container">
+      <div><ion-button [routerLink]="'/monsters'" (click)="sendData(MonstersDataArray)">Monsters</ion-button></div>
+      <div><ion-button [routerLink]="'/armor-sets'" (click)="sendData(ArmorDataArray)">Armor Sets</ion-button></div>
+      <div><ion-button [routerLink]="'/charms'" (click)="sendData(CharmDataArray)">Charms</ion-button></div>
+      <div><ion-button [routerLink]="'/weapons'" (click)="sendData(WeaponDataArray)">Weapons</ion-button></div>
+      <div><ion-button [routerLink]="'/decos'" (click)="sendData(DecoDataArray)">Decorations</ion-button></div>
+    </div>
   </div>
+
+  <ng-template #loaderTemplate>
+    <ion-spinner name="lines"></ion-spinner>
+    <p>Loading...</p>
+  </ng-template>
+
 </ion-content>

@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Monster Hunter World: Iceborne</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <h1>{{Data.name}}</h1>
+    <img src={{Data.assets.image}} alt="" width="100" height="100">
+    <p>Rarity: {{Data.rarity}}</p>
+    <p>Type: {{Data.type}}</p>
+    <h2>Attributes</h2>
+    <p>Attack:{{Data.attack.display}}</p>
+    <div *ngIf="Data.elements.length != 0">
+      <p>Element</p>
+      <div *ngFor="let ele of Data.elements">
+        <p>{{ele.type}} {{ele.damage}}</p>
+      </div>
+    </div>
+    <h2>Crafting</h2>
+      <div *ngFor="let mat of Data.crafting.craftingMaterials">
+        <p>{{mat.item.name}}: {{mat.quantity}}</p>
+      </div>
+      <div *ngFor="let mat of Data.crafting.upgradeMaterials">
+        <p>{{mat.item.name}}: {{mat.quantity}}</p>
+      </div>
+  </div>
+</ion-content>

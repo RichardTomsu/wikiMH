@@ -1,0 +1,20 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Monster Hunter World: Iceborne
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div *ngIf="DataArray.length > 0">
+    <ion-toolbar>
+      <ion-searchbar [(ngModel)]="searchTerm" (ionChange)="filterData()"></ion-searchbar>
+    </ion-toolbar>
+    <ion-item *ngFor="let item of filteredDataArray" [routerLink]="'/weapon-details'" (click)="sendData(item)">
+    <div>
+      <h2>{{item.name}}</h2>
+    </div>
+    </ion-item>
+  </div>
+</ion-content>

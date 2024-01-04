@@ -24,3 +24,44 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+.dark-theme{
+    ion-content{
+        --ion-background-color: #222;
+        color: yellow;
+    }
+    ion-button{
+        --background: black;
+    }
+    ion-item{
+        --background: #222;
+        color:yellow;
+    }
+    div{
+        color: yellow;
+    }
+    p{
+        color: yellow;
+    }
+    ion-spinner{
+        --color: yellow;
+      }
+}
+ion-content{
+    --ion-background-color: white;
+    color: black;
+}
+ion-item{
+    --background: white;
+    color:black;
+    --color-hover: blue;
+}
+div{
+    color: black;
+}
+p{
+    color: black;
+}
+ion-spinner{
+    --color: black;
+}
