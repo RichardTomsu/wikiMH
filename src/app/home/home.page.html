@@ -1,4 +1,4 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" [class.dark-theme]="darkMode">
   <ion-toolbar>
     <ion-title>
       Monster Hunter World: Iceborne
@@ -12,6 +12,9 @@
 <ion-content [fullscreen]="true" [class.dark-theme]="darkMode">
   <div *ngIf="!loading; else loaderTemplate">
     <div id="container">
+      <ion-title>
+        Monster Hunter World: Iceborne
+      </ion-title>
       <div><ion-button [routerLink]="'/monsters'" (click)="sendData(MonstersDataArray)">Monsters</ion-button></div>
       <div><ion-button [routerLink]="'/armor-sets'" (click)="sendData(ArmorDataArray)">Armor Sets</ion-button></div>
       <div><ion-button [routerLink]="'/charms'" (click)="sendData(CharmDataArray)">Charms</ion-button></div>
