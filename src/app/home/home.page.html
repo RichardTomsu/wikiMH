@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" [class.dark-theme]="darkMode">
-  <div *ngIf="!loading; else loaderTemplate">
+  <div>
     <div id="container">
       <ion-title>
         Monster Hunter World: Iceborne
@@ -27,5 +27,5 @@
     <ion-spinner name="lines"></ion-spinner>
     <p>Loading...</p>
   </ng-template>
-
+  
 </ion-content>

@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { PlacesService } from '../services/places/places.service';
 import { ThemeService } from '../theme.service';
 import { Preferences } from '@capacitor/preferences';
-
+import { SplashScreen } from '@capacitor/splash-screen';
 
 
 @Component({
@@ -29,7 +29,6 @@ export class HomePage {
     }
     ngOnInit(){
       this.loadData();
-
       
     }
   
@@ -72,7 +71,7 @@ export class HomePage {
     .subscribe(data =>{
       console.log(data);
       this.WeaponDataArray = data;
-      this.loading = false;
+      SplashScreen.hide();
     });
   }
 
